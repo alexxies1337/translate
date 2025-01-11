@@ -29,20 +29,20 @@ let correctAnswers = 0;
 let totalQuestions = 0;
 let wordsTranslated = {};
 
-const englishTextarea = document.querySelector(".box:nth-child(1) textarea"); // Select the textarea
+const englishTextarea = document.querySelector(".box:nth-child(1) textarea");
 const ukrainianText = document.querySelector(".box:nth-child(2) textarea");
 const notification = document.createElement("p");
 notification.classList.add("notification");
-document.querySelector(".box:nth-child(1)").appendChild(notification); // Add to the english box
+document.querySelector(".box:nth-child(1)").appendChild(notification);
 const scoreDisplay = document.createElement("p");
 scoreDisplay.classList.add("score");
 document.querySelector(".container").appendChild(scoreDisplay);
 
 function setWord(word) {
-    const titleCaseWord = word.charAt(0).toUpperCase() + word.slice(1); // Convert to title case
+    const titleCaseWord = word.charAt(0).toUpperCase() + word.slice(1); 
     englishTextarea.value = titleCaseWord;
     englishTextarea.readOnly = true;
-    currentWord = word; // Keep the original lowercase word
+    currentWord = word; 
     ukrainianText.value = "";
     notification.classList.remove("correct", "incorrect");
 }
@@ -121,6 +121,6 @@ ukrainianText.addEventListener('keydown', (event) => {
     }
 });
 
-// Initial word
 displayScore();
 setNewWord();
+
